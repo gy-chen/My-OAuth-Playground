@@ -3,8 +3,11 @@ import flask
 import httplib2
 from apiclient import discovery
 from oauth2client import client
+from credentials_jwt import credentials_jwt
+
 app = Flask(__name__)
 app.secret_key = b'\xfeFW\xd7\xb3\x94\xacy\xcf{\\B\x1eX\xe3Q!J\x84\x95o\xea\x90\x1f'
+app.register_blueprint(credentials_jwt, url_prefix='/jwt')
 
 @app.route('/')
 def hello_world():

@@ -1,0 +1,5 @@
+flask
+oauth2client
+google-api-python-client
+PyJWT
+six
