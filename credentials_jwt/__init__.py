@@ -19,7 +19,7 @@ credentials_jwt = Blueprint('credentials_jwt', __name__)
 @credentials_jwt.route('/')
 def index():
     encoded = flask.request.args.get('jwt')
-    if jwt:
+    if encoded:
         credentials = jwt.decode(encoded, key=JWT_SECRET, algorithms=['HS256'])[JWT_PARAM_KEY_CREDENTIALS]
         http_auth = client.OAuth2Credentials.from_json(credentials).authorize(httplib2.Http())
         oauth2 = discovery.build('oauth2', 'v2', http_auth)
