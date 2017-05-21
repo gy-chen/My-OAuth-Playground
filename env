@@ -1,2 +1,2 @@
-export FLASK_APP='web.py'
+export FLASK_APP='my_oauth_playground.web'
 export FLASK_DEBUG=1
